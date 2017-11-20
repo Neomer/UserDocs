@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<ArrayOfMeet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Meet>
+    <ID>a7966656-a18a-4f90-86f1-f9ba04ccf4c1</ID>
+    <Name>Забрать Юльку3</Name>
+    <Begin>2017-12-01T15:00:00</Begin>
+    <End>2017-12-01T15:05:00</End>
+    <Notify>35</Notify>
+  </Meet>
+  <Meet>
+    <ID>4885cd58-ae5f-4922-96e5-a1a470079f62</ID>
+    <Name>Забрать Юльку2</Name>
+    <Begin>2017-12-01T16:00:00</Begin>
+    <End>2017-12-01T16:05:00</End>
+    <Notify>35</Notify>
+  </Meet>
+  <Meet>
+    <ID>b2d00b1a-6154-4bbb-8e23-37d7ace34541</ID>
+    <Name>Забрать Юльку1</Name>
+    <Begin>2017-12-01T17:00:00</Begin>
+    <End>2017-12-01T17:05:00</End>
+    <Notify>35</Notify>
+  </Meet>
+  <Meet>
+    <ID>c874f6cb-1fba-4f36-a8d0-ba800734b945</ID>
+    <Name>Забрать Юльку4</Name>
+    <Begin>2017-12-01T18:00:00</Begin>
+    <End>2017-12-01T18:05:00</End>
+    <Notify>35</Notify>
+  </Meet>
+  <Meet>
+    <ID>eb1c5704-932a-4ce2-a7c6-14ac03dddf2a</ID>
+    <Name>Забрать Юльку5</Name>
+    <Begin>2017-12-01T19:00:00</Begin>
+    <End>2017-12-01T19:05:00</End>
+    <Notify>35</Notify>
+  </Meet>
+</ArrayOfMeet>

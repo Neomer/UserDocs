@@ -1,0 +1,14 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Вы вошли как: @User.Identity.Name</a></li>
+        <li>@Html.ActionLink("Документы", "Index", "DocView")</li>
+        <li>@Html.ActionLink("Выйти", "Logout", "Login")</li>
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Войти  в систему", "Index", "Login")</li>
+</ul>
+}

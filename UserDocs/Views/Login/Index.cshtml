@@ -1,0 +1,33 @@
+﻿@model UserDocs.Models.UserLoginModel
+
+@{
+    ViewBag.Title = "Вход в личный кабинет";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Вход в личный кабинет</h2>
+
+@using (Html.BeginForm("Index", "Login", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Username, new { @class = "control-label col-md-2" })
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Username, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Username)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-2" })
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Войти</button>
+    <a href="@Url.Action("Register", "Login")" class="btn btn-secondary btn-lg" role="button">Зарегистрироваться</a>
+}

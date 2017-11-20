@@ -1,0 +1,70 @@
+﻿@model IEnumerable<UserDocs.Models.DocumentListViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/DataTables/datatables.min.js")
+@Styles.Render("~/Scripts/DataTables/datatables.min.css")
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary list-panel" id="list-panel">
+            <div class="panel-heading list-panel-heading">
+                <h1 class="panel-title list-panel-title">Документы</h1>
+            </div>
+            <div class="panel-body">
+                <nav class="navbar navbar-light" style="margin-bottom: 0px;">
+                    <div class="navbar-collapse collapse">
+                        <a href="@Url.Action("AddDocument", "DocView")"
+                            <button type="button" class="btn btn-default" aria-label="Добавить">
+                                <span class="glyphicon glyphicon-plus"></span> Добавить
+                            </button>
+                        </a>
+                    </div>
+                </nav>
+                <table id="assets-data-table" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Дата создания</th>
+                            <th>Наименование</th>
+                            <th>Имя файла</th>
+                            <th>Размер</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var asset in Model)
+                        {
+                            <tr>
+                                <td>@asset.CreationDate</td>
+                                <td>@asset.Name</td>
+                                <td>@asset.Filename</td>
+                                <td>@asset.PrintableSize</td>
+                                <td class="text-center">
+                                    <a href="@Url.Action("DownloadFile", "DocView", new { documentID = asset.ID })">
+                                        <button type="button" class="btn btn-default btn-sm" aria-label="Открыть">
+                                            <span class="glyphicon glyphicon-download"></span> Загрузить
+                                        </button>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+     $(document).ready(function () {
+
+         $('#assets-data-table').DataTable({
+             "order": [[3, "desc"]]
+         });
+     });
+    </script>
+}

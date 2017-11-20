@@ -1,0 +1,29 @@
+﻿@model UserDocs.Models.UserRegisterModel
+
+@{
+    ViewBag.Title = "Регистрация";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Регистрация пользователя</h2>
+
+@using (Html.BeginForm("Register", "Login", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(model => model.Username, new { @class = "control-label col-md-2" })
+        @Html.EditorFor(model => model.Username, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Username)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-2" })
+        @Html.EditorFor(model => model.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Password)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PasswordCheck, new { @class = "control-label col-md-2" })
+        @Html.EditorFor(model => model.PasswordCheck, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.PasswordCheck)
+    </div>
+    <button type="submit" class="btn btn-primary">Войти</button>
+}
